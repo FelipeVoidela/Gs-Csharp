@@ -1,13 +1,13 @@
-# GS-Csharp ñ API REST (.NET 8) ñ Comunidades de Aprendizagem Colaborativa e Global
+Ôªø# GS-Csharp ‚Äì API REST (.NET 8) ‚Äì Comunidades de Aprendizagem Colaborativa e Global
 
-Projeto do tema ìO Futuro do Trabalhoî, focado em comunidades colaborativas de aprendizagem com os recursos: Professor, Aluno, Comunidade, Curso e InscriÁ„o. A API segue boas pr·ticas REST, possui versionamento (v1 e v2), documentaÁ„o Swagger e persistÍncia em Oracle via Entity Framework Core.
+Projeto do tema ‚ÄúO Futuro do Trabalho‚Äù, focado em comunidades colaborativas de aprendizagem com os recursos: Professor, Aluno, Comunidade, Curso e Inscri√ß√£o. A API segue boas pr√°ticas REST, possui versionamento (v1 e v2), documenta√ß√£o Swagger e persist√™ncia em Oracle via Entity Framework Core.
 
 Principais recursos
-- Boas pr·ticas REST: verbos HTTP corretos (GET, POST, PUT, DELETE) e status codes padronizados.
-- Versionamento: rotas /api/v1 e /api/v2. Selecion·vel no Swagger.
-- PersistÍncia: Oracle Database + EF Core 8 (mapeamento e migrations).
-- Swagger/OpenAPI: documentaÁ„o interativa para v1 e v2.
-- Clean Code: organizaÁ„o por camadas e DTOs.
+- Boas pr√°ticas REST: verbos HTTP corretos (GET, POST, PUT, DELETE) e status codes padronizados.
+- Versionamento: rotas /api/v1 e /api/v2. Selecion√°vel no Swagger.
+- Persist√™ncia: Oracle Database + EF Core 8 (mapeamento e migrations).
+- Swagger/OpenAPI: documenta√ß√£o interativa para v1 e v2.
+- Clean Code: organiza√ß√£o por camadas e DTOs.
 
 Stack
 - .NET 8 (ASP.NET Core Web API)
@@ -29,23 +29,23 @@ Estrutura de pastas (simplificada)
 
 Banco de dados (Oracle)
 - Tabelas mapeadas: ALUNOS, PROFESSORES, COMUNIDADES, CURSOS, INSCRICOES.
-- String de conex„o externa: arquivo GS-Csharp/appsettings.Oracle.json (n„o commitado). Exemplo:
+- String de conex√£o externa: arquivo GS-Csharp/appsettings.Oracle.json (n√£o commitado). Exemplo:
   User Id=SEU_USUARIO;Password=SUA_SENHA;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=HOST)(PORT=1521))(CONNECT_DATA=(SID=orcl)))
 
 Migrations (EF Core)
-1) Instale a ferramenta EF (se necess·rio)
+1) Instale a ferramenta EF (se necess√°rio)
    dotnet tool install --global dotnet-ef --version 8.0.10
 2) Criar a migration inicial
    dotnet ef migrations add InitialCreate --project GS-Csharp/GS-Csharp.csproj
 3) Aplicar no Oracle
    dotnet ef database update --project GS-Csharp/GS-Csharp.csproj
 
-ObservaÁıes
-- O Program.cs chama db.Database.Migrate() no startup. Depois de criada a migration, ao iniciar a API as pendÍncias s„o aplicadas automaticamente.
-- Certifique-se de conectar no CLIENTE Oracle com o mesmo usu·rio do appsettings.Oracle.json para ver as tabelas.
+Observa√ß√µes
+- O Program.cs chama db.Database.Migrate() no startup. Depois de criada a migration, ao iniciar a API as pend√™ncias s√£o aplicadas automaticamente.
+- Certifique-se de conectar no CLIENTE Oracle com o mesmo usu√°rio do appsettings.Oracle.json para ver as tabelas.
 
 Como executar
-1) PrÈ?requisitos: .NET 8 SDK e acesso a um Oracle (host/porta/SID ou ServiceName, usu·rio, senha).
+1) Pr√©‚Äërequisitos: .NET 8 SDK e acesso a um Oracle (host/porta/SID ou ServiceName, usu√°rio, senha).
 2) Configure GS-Csharp/appsettings.Oracle.json com sua ConnectionString.
 3) Restaurar e compilar
    dotnet restore
@@ -54,31 +54,28 @@ Como executar
    dotnet run --project GS-Csharp/GS-Csharp.csproj
 5) Swagger
    - https://localhost:PORT/swagger
-   - Seletor no topo para ìGS-Csharp v1î e ìGS-Csharp v2î.
+   - Seletor no topo para ‚ÄúGS-Csharp v1‚Äù e ‚ÄúGS-Csharp v2‚Äù.
 
 Rotas (v1)
 - Alunos:    GET/POST /api/v1/alunos, GET/PUT/DELETE /api/v1/alunos/{id}
 - Professores: GET/POST /api/v1/professores, GET/PUT/DELETE /api/v1/professores/{id}
 - Comunidades: GET/POST /api/v1/comunidades, GET/PUT/DELETE /api/v1/comunidades/{id}
 - Cursos:     GET/POST /api/v1/cursos, GET/PUT/DELETE /api/v1/cursos/{id}
-- InscriÁıes: GET/POST /api/v1/inscricoes, DELETE /api/v1/inscricoes/{id}
+- Inscri√ß√µes: GET/POST /api/v1/inscricoes, DELETE /api/v1/inscricoes/{id}
 
 Rotas (v2)
-- Mesmas rotas de v1 para Alunos/Professores/Comunidades/Cursos/InscriÁıes.
+- Mesmas rotas de v1 para Alunos/Professores/Comunidades/Cursos/Inscri√ß√µes.
 - Melhorias:
-  - Cursos v2: GET retorna tambÈm TotalInscritos por curso; GET por id idem.
-  - InscriÁıes v2: suporta filtros por alunoId e cursoId em GET; evita duplicidade no POST.
+  - Cursos v2: GET retorna tamb√©m TotalInscritos por curso; GET por id idem.
+  - Inscri√ß√µes v2: suporta filtros por alunoId e cursoId em GET; evita duplicidade no POST.
 
-Status codes padr„o
-- 200 OK (GET), 201 Created (POST), 204 No Content (PUT/DELETE), 400 Bad Request, 404 Not Found, 409 Conflict (duplicidade de inscriÁ„o v2), 500 para erros inesperados.
-
-Git e seguranÁa
-- .gitignore ignora appsettings.Oracle.json e arquivos locais. N„o commitar credenciais.
+Status codes padr√£o
+- 200 OK (GET), 201 Created (POST), 204 No Content (PUT/DELETE), 400 Bad Request, 404 Not Found, 409 Conflict (duplicidade de inscri√ß√£o v2), 500 para erros inesperados.
 
 Problemas comuns
-- ìNo migrations were appliedî: crie a migration (ver seÁ„o Migrations).
-- Erro ao copiar bin·rio na build: feche a execuÁ„o anterior antes de recompilar.
+- ‚ÄúNo migrations were applied‚Äù: crie a migration (ver se√ß√£o Migrations).
+- Erro ao copiar bin√°rio na build: feche a execu√ß√£o anterior antes de recompilar.
 - HTTPS local: dotnet dev-certs https --trust.
 
-LicenÁa
-- Uso educacional/acadÍmico.
+Licen√ßa
+- Uso educacional/acad√™mico.

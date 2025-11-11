@@ -21,4 +21,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\v2\" />
+  </ItemGroup>
+
 </Project>
