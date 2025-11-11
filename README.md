@@ -1,4 +1,4 @@
-﻿# GS-Csharp – API REST (.NET 8) – Comunidades de Aprendizagem Colaborativa e Global
+ # GS-Csharp – API REST (.NET 8) – Comunidades de Aprendizagem Colaborativa e Global
 
 Projeto do tema “O Futuro do Trabalho”, focado em comunidades colaborativas de aprendizagem com os recursos: Professor, Aluno, Comunidade, Curso e Inscrição. A API segue boas práticas REST, possui versionamento (v1 e v2), documentação Swagger e persistência em Oracle via Entity Framework Core.
 
@@ -79,3 +79,12 @@ Problemas comuns
 
 Licença
 - Uso educacional/acadêmico.
+
+
+# Integrantes
+Felipe Voidela Toledo - RM 98595
+
+Gustavo Kenzo - RM 98481
+
+Lucas Bandeira - RM 98640
+
