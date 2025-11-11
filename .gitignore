@@ -1,0 +1,41 @@
+# Build outputs
+bin/
+obj/
+out/
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs and coverage
+logs/
+*.log
+TestResults/
+*.coverage
+*.coveragexml
+
+# NuGet
+packages/
+*.nupkg
+.nuget/
+
+# Secrets / Local config
+GS-Csharp/appsettings.Oracle.json
+GS-Csharp/appsettings.*.local.json
+.env
+.env.*
+
+# HTTP scratch files (optional)
+*.http
+
+# Rider/Resharper
+_ReSharper.Caches/
