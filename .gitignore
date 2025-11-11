@@ -12,17 +12,6 @@ out/
 *.userosscache
 *.sln.docstates
 
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs and coverage
-logs/
-*.log
-TestResults/
-*.coverage
-*.coveragexml
-
 # NuGet
 packages/
 *.nupkg
@@ -37,5 +26,8 @@ GS-Csharp/appsettings.*.local.json
 # HTTP scratch files (optional)
 *.http
 
-# Rider/Resharper
-_ReSharper.Caches/
+# OS
+.DS_Store
+Thumbs.db
+
+

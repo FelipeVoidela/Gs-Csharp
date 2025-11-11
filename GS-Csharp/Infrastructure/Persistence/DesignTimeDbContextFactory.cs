@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace GS_Csharp.Infrastructure.Persistence;
 
-// Allows 'dotnet ef' tools to create the DbContext at design time
+
 public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
 {
     public AppDbContext CreateDbContext(string[] args)
